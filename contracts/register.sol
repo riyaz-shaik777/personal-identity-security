@@ -37,7 +37,7 @@ contract register {
   // function to check login
   function loginUser(address username,uint password) public view returns(bool){
 
-    require(!_users[username]);
+    require(_users[username]);
 
     uint i;
     for(i=0;i<_usernames.length;i++){
