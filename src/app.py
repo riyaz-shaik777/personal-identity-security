@@ -218,7 +218,7 @@ def logout():
     return redirect('/')
 
 @app.route('/sharedFiles')
-def sharedImages():
+def sharedFiles():
     data=[]
     contract,web3=connect_with_file_blockchain(0)
     _users,_names,_files,_tokens=contract.functions.viewFiles().call()
@@ -231,7 +231,7 @@ def sharedImages():
     return render_template('sharedfiles.html',dashboard_data=data,len=len(data))
 
 @app.route('/mysharedfiles')
-def mysharedimages():
+def mysharedfiles():
     contract,web3=connect_with_file_blockchain(0)
     _users,_names,_files,_tokens=contract.functions.viewFiles().call()
     data=[]
