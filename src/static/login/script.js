@@ -1,25 +1,19 @@
-$(document).ready(function() {
-    var panelOne = $('.form-panel.two').height(),
-      panelTwo = $('.form-panel.two')[0].scrollHeight;
-  
-    $('.form-panel.two').not('.form-panel.two.active').on('click', function(e) {
-      e.preventDefault();
-  
-      $('.form-toggle').addClass('visible');
-      $('.form-panel.one').addClass('hidden');
-      $('.form-panel.two').addClass('active');
-      $('.form').animate({
-        'height': panelTwo
-      }, 200);
-    });
-  
-    $('.form-toggle').on('click', function(e) {
-      e.preventDefault();
-      $(this).removeClass('visible');
-      $('.form-panel.one').removeClass('hidden');
-      $('.form-panel.two').removeClass('active');
-      $('.form').animate({
-        'height': panelOne
-      }, 200);
-    });
-  });
+function signup()
+{
+    document.querySelector(".login-form-container").style.cssText = "display: none;";
+    document.querySelector(".signup-form-container").style.cssText = "display: block;";
+    document.querySelector(".container").style.cssText = "background: linear-gradient(to bottom, rgb(56, 189, 149),  rgb(28, 139, 106));";
+    document.querySelector(".button-1").style.cssText = "display: none";
+    document.querySelector(".button-2").style.cssText = "display: block";
+
+};
+
+function login()
+{
+    document.querySelector(".signup-form-container").style.cssText = "display: none;";
+    document.querySelector(".login-form-container").style.cssText = "display: block;";
+    document.querySelector(".container").style.cssText = "background: linear-gradient(to bottom, rgb(6, 108, 224),  rgb(14, 48, 122));";
+    document.querySelector(".button-2").style.cssText = "display: none";
+    document.querySelector(".button-1").style.cssText = "display: block";
+
+}

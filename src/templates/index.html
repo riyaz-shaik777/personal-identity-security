@@ -7,67 +7,59 @@
         <!-- <script src="https://codepen.io/andytran/pen/vLmRVp.js"></script> -->
         <link rel="stylesheet" href="{{url_for('static',filename='login/style.css')}}"/>
         <script src="{{url_for('static',filename='login/script.js')}}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     </head>
     <body>
-    <!-- Form-->
-    <div class="form">
-        <div class="form-toggle"></div>
-            <div class="form-panel one">
-                <div class="form-header">
-                    <h1>Account Login</h1>
+        <div class="container">
+            <!--Data or Content-->
+            <div class="box-1">
+                <div class="content-holder">
+                    <h2>Hello!</h2>
+                   
+                    <button class="button-1" onclick="signup()">Sign up</button>
+                    <button class="button-2" onclick="login()">Login</button>
                 </div>
-                <div class="form-content">
+            </div>
+
+            <!--Forms-->
+            <div class="box-2">
+                <div class="login-form-container">
                     <form action="/loginUser" method="post">
-                        <div class="form-group">
-                            <label for="username1">Username</label>
-                            <input type="text" id="username1" name="username1" placeholder="Enter Wallet Address" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="password1">Password</label>
-                            <input type="password1" id="password1" name="password1" required="">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit">Log In</button>
-                        </div>
-                    </form>
-                    <span style="color:green">{{res1}}</span>
+                        <h1>Login Form</h1>
+                        <input type="text" placeholder="Wallet Address" name="username1" class="input-field" required="">
+                        <br><br>
+                        <input type="password" placeholder="Password" name="password1" class="input-field" required="">
+                        <br><br>
+                        <button class="login-button" type="submit">Login</button>
+                    </form> <br/> <br/>
                     <span style="color:red">{{err1}}</span>
+                    <span style="color:green">{{res1}}</span>
                 </div>
+      
+      
+      <!--Create Container for Signup form-->
+            <div class="signup-form-container">
+                <h1>Sign Up Form</h1>
+                <form action="/registerUser" method="post">
+                <input type="text" placeholder="Wallet Address" name="username" class="input-field" required="">
+                <br><br>
+                <input type="text" placeholder="Your Name" name="name" class="input-field" required="">
+                <br><br>
+                <input type="text" placeholder="Mobile" name="mobile" class="input-field" required="">
+                <br><br>
+                <input type="email" placeholder="Email" name="email" class="input-field" required="">
+                <br><br>
+                <input type="password" placeholder="Password" name="password" class="input-field" required="">
+                <br><br>
+                <button class="signup-button" type="submit">Sign Up</button>
+                </form> <br/><br/>
+                <span style="color: red;">{{err}}</span>
+                <span style="color:green">{{res}}</span>
             </div>
-            <div class="form-panel two">
-                <div class="form-header">
-                    <h1>Register Account</h1>
-                </div>
-                <div class="form-content">
-                    <form action="/registerUser" method="post">
-                        <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" id="username" name="username" placeholder="Enter your Wallet Address" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your Name" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your Email address" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="mobile">Mobile Number</label>
-                            <input type="text" id="mobile" name="mobile" placeholder="Enter your Mobile No" required="">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit">Register</button>
-                        </div>
-                    </form>
-                    <span style="color:green">{{res}}</span>
-                    <span style="color:red">{{err}}</span>
-                </div>
+      
+      
+      
             </div>
-        </div>
     </body>
 </html>
