@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personal Identity Security using Blockchian</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!-- <script src="https://codepen.io/andytran/pen/vLmRVp.js"></script> -->
+        <link rel="stylesheet" href="{{url_for('static',filename='login/style.css')}}"/>
+        <script src="{{url_for('static',filename='login/script.js')}}"></script>
+    </head>
+    <body>
+    <!-- Form-->
+    <div class="form">
+        <div class="form-toggle"></div>
+            <div class="form-panel one">
+                <div class="form-header">
+                    <h1>Account Login</h1>
+                </div>
+                <div class="form-content">
+                    <form action="/loginUser" method="post">
+                        <div class="form-group">
+                            <label for="username1">Username</label>
+                            <input type="text" id="username1" name="username1" placeholder="Enter Wallet Address" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="password1">Password</label>
+                            <input type="password1" id="password1" name="password1" required="">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Log In</button>
+                        </div>
+                    </form>
+                    <span style="color:green">{{res1}}</span>
+                    <span style="color:red">{{err1}}</span>
+                </div>
+            </div>
+            <div class="form-panel two">
+                <div class="form-header">
+                    <h1>Register Account</h1>
+                </div>
+                <div class="form-content">
+                    <form action="/registerUser" method="post">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" placeholder="Enter your Wallet Address" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your Name" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your Email address" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile Number</label>
+                            <input type="text" id="mobile" name="mobile" placeholder="Enter your Mobile No" required="">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Register</button>
+                        </div>
+                    </form>
+                    <span style="color:green">{{res}}</span>
+                    <span style="color:red">{{err}}</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
